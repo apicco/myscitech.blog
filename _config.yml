@@ -21,7 +21,7 @@
 title: myscitech.blog 
 email: write@myscitech.blog 
 description: >- # this means to ignore newlines until "baseurl:"
-    Of science, and information technology
+    About data, science, and information technology
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.myscitech.blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: myscitech
