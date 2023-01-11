@@ -8,20 +8,14 @@ date: 2023-01-03
 You want to create a blog using [Github pages][github-pages] and [Jekyll][jekyll].
 These lines will help you set it up and have it running in a few minutes. 
 
-In [Github][github] create a [new repository][github-new] for your site. Let's call it `<your-github-username>`.github.io. 
-The name of your repository is important: 
-if you would call it, for exampe `<your-repository-name>`, then your blog post would be accessible only at the url `<your-github-username>`.github.io/`<your-repository-name>`.
-That is not a problem, but if you later want to buy a fancy domain for you blog, for example [myscitech.blog][this_blog], then your post would appear at the url myscitech.blog/`<your-repository-name>`.
-This is an essential feature of Github pages that allows you to have a domain and many projects (repositories) linked to that domaiin. 
-In our case, however, we want to have only a fancy blog that we can manage with Github, and edit with markdown.
-If you set the repository name as `<your-github-username>`.github.io, your blog will be accessible at `<your-github-username>`.github.io, which you can later link to a fancy domain name. Unfortunatelly, GitHub Pages supports using cutom domains that point to the default URL `<your-github-username>`.github.io, and not `<your-github-username>`.github.io/`<your-repository-name>`.
+In [Github][github] create a [new repository][github-new] for your site. Let's call it `<your-repository-name>`.
 
 Unless you have a GitHub Pro account, you must keep the repository Public. Make sure you choose the right license for you. 
 
 Now you are ready to clone your repository:
 
 ```
-git clone https://github.com/<your-user-name>/<your-blog>.git
+git clone https://github.com/<your-user-name>/<your-repository-name>.git
 ```
 
 Enter your repository folder, which should be empty with the exception of the LICENCE and README.md files, if you chose to have them (you can empty the directory with `git rm -rf` if you need).
@@ -92,17 +86,17 @@ In Settings, under **Code and automation**, in `Pages`, and then **Build and dep
 
 The page will be accessible under 
 ```
-<your-user-name>.github.io/<your-blog>
+<your-user-name>.github.io/<your-repository-name>
 ```
 
 # Create a DNS
 
-Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository _your-blog_ select `Pages` in the left menu under **Code and automation**. 
+Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository _your-repository-name_ select `Pages` in the left menu under **Code and automation**. 
 Under **Custom domain** enter your custom domain name and hit save. Below, tick **Enforce HTTPS**. If you want to set up a www subdomain, go to your DNS provider and enter the followings:
 - Host name: www
 - Type: CNAME
 - TTL: 3600
-- Data: `<your-user-name>`.github.io/`<your-blog>`
+- Data: https://`<your-user-name>`.github.io/`<your-repository-name>`
 
 It might take up to 24 hours for the configuration to propagate and be effective. Be patient!
 You can simply check if the DNS is working by typing:
