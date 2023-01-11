@@ -6,33 +6,36 @@ date: 2023-01-03
 
 # Create the repository
 You want to create a blog using [Github pages][github-pages] and [Jekyll][jekyll].
-These few lines will help you set it up and have it running in a few minutes. 
+These lines will help you set it up and have it running in a few minutes. 
 
-In [Github][github] create a [new repository][github-new] for your site. Let's call it `<your-blog>`.
+In [Github][github] create a [new repository][github-new] for your site. Let's call it `<your-github-username>`.github.io. 
+The name of your repository is important: 
+if you would call it, for exampe `<your-repository-name>`, then your blog post would be accessible only at the url `<your-github-username>`.github.io/`<your-repository-name>`.
+That is not a problem, but if you later want to buy a fancy domain for you blog, for example [myscitech.blog][this_blog], then your post would appear at the url myscitech.blog/`<your-repository-name>`.
+This is an essential feature of Github pages that allows you to have a domain and many projects (repositories) linked to that domaiin. 
+In our case, however, we want to have only a fancy blog that we can manage with Github, and edit with markdown.
+If you set the repository name as `<your-github-username>`.github.io, your blog will be accessible at `<your-github-username>`.github.io, which you can later link to a fancy domain name. Unfortunatelly, GitHub Pages supports using cutom domains that point to the default URL `<your-github-username>`.github.io, and not `<your-github-username>`.github.io/`<your-repository-name>`.
 
 Unless you have a GitHub Pro account, you must keep the repository Public. Make sure you choose the right license for you. 
-
-In Settings, under **Build and deployment**, choose:
-- Source: `Deploy from a branch`
-- Branch: select `main`, leave `/(root)`, and click Save
 
 Now you are ready to clone your repository:
 
 ```
-git clone https://github.com/apicco/<your-blog>.git
+git clone https://github.com/<your-user-name>/<your-blog>.git
 ```
 
 Enter your repository folder, which should be empty with the exception of the LICENCE and README.md files, if you chose to have them (you can empty the directory with `git rm -rf` if you need).
 
 # Deploy Jekyll
+
 If you did not install [Jekyll][jekyll] yet, do it: `gem install bundler jekyll` (more infos [here][jekyll-install]).
 
 Enter you repository directory and type
 ```
-jekyll new --skip-bundle
+jekyll new --skip-bundle .
 ```
 
-This generates a number of files, which include a Gemfile (a list of gems used by yoursite) and your site configuration (\_config.yml).
+This generates a number of files, which include a Gemfile, which is a list of gems used by yoursite.
 To use Jekyll with Github pages you need to edit the Gemfile and
 
 - comment `gem "jekyll"`
@@ -44,15 +47,25 @@ bundle install
 bundle update github-pages
 ```
 
+You can test the look of your site by running a local server
+```
+bundle exec jekyll server
+```
+You can then access the local server with a web browser at `localhost:4000`
+
+```
+open -a safari http://localhost:4000'
+```
+
 # Edit your site
-You can now start to edit your site and add content. You can configure your site by editing you \_config.yml file. Here, you can define important variables, such as your site name, your email address, and the Jekyll theme of your choice (the default is [minima][minima] ). 
+You can now start to edit your site and add content. You can configure your site by editing you `_config.yml` file. Here, you can define important variables, such as your site name, your email address, and the Jekyll theme of your choice (the default is [minima][minima] ). 
 
 You can also personalise the theme by editing its layout. [minima][minima] comes with a few layout files. These layouts are stored in a hidden folder, whose path you can find by typing 
 ```
 bundle info --path minima
 ``` 
 
-If you wish to modify the layout of a page, create a `_layout` folder in your repository, copy the layout file that you wish to modify into this folder, and edit it. Layouts in the `_layouts` folder overwrite the default layouts.
+If you wish to modify the layout of a page, create a `_layouts` folder in your repository, copy the layout file that you wish to modify into this folder, and edit it. Layouts in the `_layouts` folder overwrite the default layouts.
 
 Finally, you can edit your first post by creating a .markdown file in `_posts`. The file must be named with a date and a title (YYYY-MM-DD-my-title.markdown) and contains an header initiated and terminated by the `---` which specifies a few poperties such as title and layout.
 ```
@@ -71,6 +84,17 @@ git commit -m 'you commit message'
 git push
 ```
 
+# Publish your github page 
+
+In Settings, under **Code and automation**, in `Pages`, and then **Build and deployment**, choose:
+- Source: `Deploy from a branch`
+- Branch: select `main`, leave `/(root)`, and click Save
+
+The page will be accessible under 
+```
+<your-user-name>.github.io/<your-blog>
+```
+
 # Create a DNS
 
 Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository _your-blog_ select `Pages` in the left menu under **Code and automation**. 
@@ -78,7 +102,7 @@ Under **Custom domain** enter your custom domain name and hit save. Below, tick 
 - Host name: www
 - Type: CNAME
 - TTL: 3600
-- Data: `<yourusername>`.github.io/`<your-blog>`
+- Data: `<your-user-name>`.github.io/`<your-blog>`
 
 It might take up to 24 hours for the configuration to propagate and be effective. Be patient!
 You can simply check if the DNS is working by typing:

@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+This is a blog about science, data, and information technology
