@@ -107,13 +107,13 @@ To set up an [Apex domain][github-pages-apex], go to your DNS provider and enter
 ```
 (you can add multiple IP with the `+` button).
 
-Add also a www subdomain:
+Add also a `www` subdomain:
 - Host name: www
 - Type: CNAME
 - TTL: 3600
 - Data: `<your-domain-name>` (for example [myscitech.blog][this-blog])
 
-Note that if you set your www subdomain to point to `<your-user-name>`.github.io/`<your-repository-name>` it will not work because you are pointing to a repository name and not to `<your-user-name>`.github.io.
+Note that if you set your `www` subdomain to point to `<your-user-name>`.github.io/`<your-repository-name>` it will not work because you are pointing to a repository name and not to `<your-user-name>`.github.io.
 
 It might take up to 24 hours for the configuration to propagate and be effective. Be patient!
 You can simply check if the DNS is working by typing:
