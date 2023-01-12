@@ -91,8 +91,23 @@ The page will be accessible under
 
 # Create a DNS
 
-Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository _your-repository-name_ select `Pages` in the left menu under **Code and automation**. 
-Under **Custom domain** enter your custom domain name and hit save. Below, tick **Enforce HTTPS**. If you want to set up a www subdomain, go to your DNS provider and enter the followings:
+Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository `<your-repository-name>` select `Pages` in the left menu under **Code and automation**. 
+Under **Custom domain** enter your custom domain name, for example [myscitech.blog][this-blog], and hit save. Below, tick **Enforce HTTPS**. 
+
+To set up an [Apex domain][github-pages-apex], go to your DNS provider and enter the followings:
+- Host name: `leave it blanck`
+- Type: A
+- TTL: 3600
+- Data: 
+```
+        185.199.108.153
+        185.199.109.153
+        185.199.110.153
+        185.199.111.153
+```
+(you can add multiple IP with the `+` button).
+
+Add also a www subdomain:
 - Host name: www
 - Type: CNAME
 - TTL: 3600
@@ -107,9 +122,11 @@ dig www.<your-domain-name> +nostats +nocomments +nocmd
 If you want to set up a different domain, check the [Supported custom domains here][github-dns].
 
 [github-pages]: https://pages.github.com
+[github-pages-apex]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site
 [github]: https://github.com
 [github-new]: https://github.com/new
 [github-dns]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#supported-custom-domains
 [jekyll]: https://jekyllrb.com
 [jekyll-install]: https://jekyllrb.com/docs/
 [minima]: https://github.com/jekyll/minima#minima
+[this-blog]: https://myscitech.blog
