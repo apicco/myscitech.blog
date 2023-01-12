@@ -52,7 +52,11 @@ open -a safari http://localhost:4000'
 ```
 
 # Edit your site
-You can now start to edit your site and add content. You can configure your site by editing you `_config.yml` file. Here, you can define important variables, such as your site name, your email address, and the Jekyll theme of your choice (the default is [minima][minima] ). 
+You can now start to edit your site and add content. You can configure your site by editing you `_config.yml` file. Here, you can define important variables, such as your site name, your email address, and the Jekyll theme of your choice (the default is [minima][minima] ). In your `_config.yml` file make sure to have the followings:
+```
+baseurl: "/" # the subpath of your site, put /<your-repository-name> if you do not have a custom domain 
+url: "<your-domain-name>" # the base hostname & protocol for your site, e.g. https://myscitech.blog or <your-user-name>`.github.io/`<your-repository-name>, if you do not have a custom domain
+```
 
 You can also personalise the theme by editing its layout. [minima][minima] comes with a few layout files. These layouts are stored in a hidden folder, whose path you can find by typing 
 ```
