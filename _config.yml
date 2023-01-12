@@ -22,8 +22,10 @@ title: myscitech.blog
 email: write@myscitech.blog 
 description: >- # this means to ignore newlines until "baseurl:"
     About data, science, and information technology
+#baseurl: "/myscitech.blog" # the subpath of your site, e.g. /blog
+#url: "https://apicco.github.io/myscitech.blog" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://apicco.github.io/myscitech.blog" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://myscitech.blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: myscitech
 github_username: apicco
 
