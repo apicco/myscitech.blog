@@ -92,7 +92,7 @@ The page will be accessible under
 # Create a DNS
 
 Finally, you want to create a custom domain that points to your GitHub page. First, in the settings of your github repository `<your-repository-name>` select `Pages` in the left menu under **Code and automation**. 
-Under **Custom domain** enter your custom domain name, for example [myscitech.blog][this-blog], and hit save. Below, tick **Enforce HTTPS**. 
+Under **Custom domain** enter your custom domain name `<your-domain-name>`, for example [myscitech.blog][this-blog], and hit save. Below, tick **Enforce HTTPS**. 
 
 To set up an [Apex domain][github-pages-apex], go to your DNS provider and enter the followings:
 - Host name: `leave it blanck`
@@ -111,11 +111,14 @@ Add also a www subdomain:
 - Host name: www
 - Type: CNAME
 - TTL: 3600
-- Data: https://`<your-user-name>`.github.io/`<your-repository-name>`
+- Data: `<your-domain-name>` (for example [myscitech.blog][this-blog])
+
+Note that if you set your www subdomain to point to `<your-user-name>`.github.io/`<your-repository-name>` it will not work because you are pointing to a repository name and not to `<your-user-name>`.github.io.
 
 It might take up to 24 hours for the configuration to propagate and be effective. Be patient!
 You can simply check if the DNS is working by typing:
 ```
+dig <your-domain-name> +nostats +nocomments +nocmd
 dig www.<your-domain-name> +nostats +nocomments +nocmd
 ```
 
