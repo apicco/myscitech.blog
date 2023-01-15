@@ -2,6 +2,7 @@
 layout: post
 title: How to create your blog with GitHub Pages
 date: 2023-01-03
+excerpt: "ciao"
 ---
 
 # Create the repository
