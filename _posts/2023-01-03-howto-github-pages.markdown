@@ -2,11 +2,11 @@
 layout: post
 title: How to create your blog with GitHub Pages
 date: 2023-01-03
-excerpt: "ciao"
+excerpt: "Create your own blog with GitHub Pages and register a domain to point to it, without interfering with your github.io page and other pages from your repositories."
 ---
 
 # Create the repository
-You want to create a blog using [GitHub pages][github-pages] and [Jekyll][jekyll].
+You want to create a blog using [GitHub Pages][github-pages] and [Jekyll][jekyll].
 These lines will help you set it up and have it running in a few minutes. 
 
 In [GitHub][github], create a [new repository][github-new] for your site. Let's call it `<your-repository-name>`.
