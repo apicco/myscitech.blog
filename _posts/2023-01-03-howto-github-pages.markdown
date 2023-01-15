@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to create your blog with github pages
+title: How to create your blog with GitHub Pages
 date: 2023-01-03
 ---
 
@@ -65,7 +65,7 @@ bundle info --path minima
 
 If you want to modify the layout of a page, create a `_layouts` folder in your repository, copy the layout file that you wish to change into this folder, and edit it. Layouts in the `_layouts` folder overwrite the default layouts.
 
-Finally, you can edit your first post by creating a .markdown file in `_posts`. The file must be named with a date and a title (YYYY-MM-DD-my-title.markdown) and contains a header initiated and terminated by the `---`, which specifies a few properties such as title and layout.
+Finally, you can edit your first post by creating a .markdown file in `_posts`. The file must be named with a date and a title (YYYY-MM-DD-my-title.markdown) and contains a header initiated and terminated by the `---`, which specifies a few properties such as title and layout. This hearder is a [YAML front matter][yaml-front-matter].
 ```
 ---
 layout: post
@@ -137,3 +137,4 @@ Check the supported custom domains [here][github-dns] if you want to set up a di
 [jekyll-install]: https://jekyllrb.com/docs/
 [minima]: https://github.com/jekyll/minima#minima
 [this-blog]: https://myscitech.blog
+[yaml-front-matter]: https://jekyllrb.com/docs/front-matter/
