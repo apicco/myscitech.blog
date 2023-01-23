@@ -8,7 +8,5 @@ I am a [scientist][linkedin]. This blog is about my passion about data, programm
 
 For any question, or feedback, please write to `write` `@` `myscitech.blog`
 
-[Here][apicco] is my GitHub repository.
-
 [linkedin]:https://www.linkedin.com/in/andrea-picco/
 [apicco]: https://github.com/apicco
