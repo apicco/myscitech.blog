@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to create a fancy home music system with Spotifyd.
-date: 2023-01-15
+date: 2023-01-23
 excerpt: "Set up an open source Spotify client to run as a daemon streaming music in your apartment, which you can control from any device connected to your internet."
 ---
 
