@@ -5,4 +5,4 @@
 layout: home
 ---
 
-This is a blog about science, data, and information technology
+This blog is about my learning endeavours in technology, data, and science.
