@@ -15,7 +15,7 @@
 /** .site-title { font-size: 26px; font-weight: 300; line-height: 54px; letter-spacing: -1px; margin-bottom: 0; float: left; } **/
 /** add the logo **/
 .site-title::before {
- 	content: url("/images/myscitech-logo-small.png");
+ 	content: url("/assets/images/myscitech-logo-small.png");
  	display: inline-block;
  	position: relative;
  	width: 73px;
