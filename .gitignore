@@ -3,5 +3,6 @@ _site
 _sass
 .jekyll-cache
 .jekyll-metadata
+.DS_Store
 vendor
 .vscode
