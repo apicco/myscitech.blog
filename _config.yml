@@ -28,6 +28,8 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://myscitech.blog" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: myscitech
 github_username: apicco
+
+# Google Analytics
 google_analytics: G-JGXX9XZ8VM
 
 # Build settings
