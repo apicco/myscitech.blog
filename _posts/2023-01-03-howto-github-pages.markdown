@@ -131,14 +131,47 @@ Check the supported custom domains [here][github-dns] if you want to set up a di
 
 # Link to Google Analytics
 
-To track the visits to your site, register your site URL with [Google Analytics][google-analytics]. You will obtain a `MEASUREMENT ID`.
-Normally, it should be sufficient to add your measurement ID to your `_config.yml` file. [minima][minima] comes with a google-analytics.html in its default `_includes` (whose path, remember, you can access with `bundle info --path minima`).
-That did not work for me. Instead, I had to copy the Google Analytics custom code and create my own `google_analytics.html` file in `_includes` (which overwrites the default from [minima][minima]). 
-You can copy and paste the Google Analytics `gtag.js` code from 
+To track the visits to your site, register your site URL with [Google Analytics][google-analytics]. You will obtain a `measurement ID`.
+
+Add your measurement ID to your `_config.yml` file:
+
 ```
-admin (in the lower left corner of the page) > Data Streams > (your stream) > View tagging instructions (it is at the very bottom of the page) > Install manually
+# Google Analytics:
+google_analytics: <your-measurement-ID>
 ```
-You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] `_includes` searches for such a file. If you want to name this file differently, you will have to modify the `head.html` and store it in your `_includes`.
+[Minima][minima] comes with a `google-analytics.html` in its default `_includes` (whose path, remember, you can access with `bundle info --path minima`). That did not work for me. 
+Instead, search and copy the Google Analytics `gtag.js` code from [Google Analytics][google-analytics]:
+```
+admin (in the lower left corner of the Google Analytics page) > Data Streams > (your stream) > View tagging instructions (it is at the very bottom of the page) > Install manually
+```
+The code should look like this: 
+```
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+```
+Note that here I replaced your `measurement ID` iwth `{{ site.google_analytics }}` in two places.
+
+Paste this code in your own `google_analytics.html` file in your `_includes` (which overwrites the default from [minima][minima]). 
+You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] searches for such a file. Here is how your '`ead.html` might look like:
+
+```
+<head>
+  ...
+  ...
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>
+```
+Note also that the `head.html` searches for your `site.google_analytics` variable, which you stored in `_config.yml`. The 'production' option is to avoid that Google Analytics counts the visits of your site on localhost. 
+ If you want to name this file differently, you will have to modify the `head.html` and store it in your `_includes`.
 Once done, wait for one day or two.
 
 [github-pages]: https://pages.github.com
