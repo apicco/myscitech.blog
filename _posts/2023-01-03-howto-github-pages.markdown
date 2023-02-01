@@ -129,6 +129,18 @@ dig www.<your-domain-name> +nostats +nocomments +nocmd
 
 Check the supported custom domains [here][github-dns] if you want to set up a different domain.
 
+# Link to Google Analytics
+
+To track the visits to your site, register your site URL with [Google Analytics][google-analytics]. You will obtain a `MEASUREMENT ID`.
+Normally, it should be sufficient to add your measurement ID to your `_config.yml` file. [minima][minima] comes with a google-analytics.html in its default `_includes` (whose path, remember, you can access with `bundle info --path minima`).
+That did not work for me. Instead, I had to copy the Google Analytics custom code and create my own `google_analytics.html` file in `_includes` (which overwrites the default from [minima][minima]). 
+You can copy and paste the Google Analytics `gtag.js` code from 
+```
+admin (in the lower left corner of the page) > Data Streams > (your stream) > View tagging instructions (it is at the very bottom of the page) > Install manually
+```
+You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] `_includes` searches for such a file. If you want to name this file differently, you will have to modify the `head.html` and store it in your `_includes`.
+Once done, wait for one day or two.
+
 [github-pages]: https://pages.github.com
 [github-pages-apex]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site
 [github]: https://github.com
@@ -139,3 +151,4 @@ Check the supported custom domains [here][github-dns] if you want to set up a di
 [minima]: https://github.com/jekyll/minima#minima
 [this-blog]: https://myscitech.blog
 [yaml-front-matter]: https://jekyllrb.com/docs/front-matter/
+[google-analytics]: https://analytics.google.com
