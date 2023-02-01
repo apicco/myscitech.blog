@@ -2,7 +2,7 @@
 layout: post
 title: How to create your blog with GitHub Pages
 date: 2023-01-03
-published: false
+published: true
 excerpt: "Create your own blog with GitHub Pages and register a domain to point to it, without interfering with your github.io page and other repository pages."
 ---
 
@@ -146,6 +146,7 @@ Instead, search and copy the Google Analytics `gtag.js` code from [Google Analyt
 admin (in the lower left corner of the Google Analytics page) > Data Streams > (your stream) > View tagging instructions (it is at the very bottom of the page) > Install manually
 ```
 The code should look like this: 
+{%raw%}
 ```
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -157,11 +158,13 @@ The code should look like this:
   gtag('config', '{{ site.google_analytics }}');
 </script>
 ```
-Note that here I replaced your `measurement ID` iwth `{{ site.google_analytics }}` in two places.
+{%endraw%}
+Note that here I replaced `<your-measurement-ID>` with {%raw%}`{{ site.google_analytics }}`{%endraw%} in two places. 
+This code will thus load `<your-measurement-ID>` from your `_config.yml` file.
 
-Paste this code in your own `google_analytics.html` file in your `_includes` (which overwrites the default from [minima][minima]). 
-You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] searches for such a file. Here is how your '`ead.html` might look like:
-
+Paste the code in a new `google_analytics.html` file in your `\_includes` (which thus overwrites the default from [minima][minima]). 
+You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] searches for such a file:
+{%raw%}
 ```
 <head>
   ...
@@ -171,9 +174,12 @@ You must name your file as `google-analytics.html` because the default `head.htm
   {%- endif -%}
 </head>
 ```
-Note also that the `head.html` searches for your `site.google_analytics` variable, which you stored in `_config.yml`. The 'production' option is to avoid that Google Analytics counts the visits of your site on localhost. 
- If you want to name this file differently, you will have to modify the `head.html` and store it in your `_includes`.
-Once done, wait for one day or two.
+{%endraw%}
+
+Note also that the `head.html` searches for your `site.google_analytics` variable, which you stored in `_config.yml`. 
+The 'production' option is to avoid Google Analytics counting the site visits on localhost. 
+
+Once done, wait for one day or two for Google Analytics to link to your site.
 
 [github-pages]: https://pages.github.com
 [github-pages-apex]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site
