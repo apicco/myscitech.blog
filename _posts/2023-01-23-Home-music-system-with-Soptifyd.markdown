@@ -33,6 +33,16 @@ Follow the [installation instructions][spotifyd-installation] on the Spotifyd Gi
 Once the installation is done, [configure your Spotifyd daemon][spotifyd-configuration]. Here, you can set your cache parameters, if any, your initial volume settings, the audio bitrate, etc. etc.
 Finally, you need to [set up the daemon to run as a service][spotifyd-service].
 
+# Power managment
+
+The computer is old, and it is constantly on. To minimise power consumption, I installed [pm-powersave][pm-utils]
+```
+sudo apt-get install pm-utils
+```
+To enter low power mode, it is sufficient to run 
+```
+sudo pm-powesave true
+```
 Enjory it!
 
 # References:
@@ -48,3 +58,4 @@ Enjory it!
 [spotifyd-service]: http://spotifyd.github.io/spotifyd/config/services/index.html
 [raspberrypi]: https://www.raspberrypi.com
 [ubuntu]: https://ubuntu.com/download/desktop
+[pm-utils]:https://help.ubuntu.com/community/PowerManagement/ReducedPower
