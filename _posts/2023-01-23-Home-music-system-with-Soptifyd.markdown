@@ -9,7 +9,7 @@ Imagine. You arrive home, and you want to put up some ambient music.
 You open your Spotify app on your phone and play your playlist of choice. 
 It would be cool if this music could diffuse automatically into your apartment. 
 With [Spotifyd][spotifyd], that is possible.
-You must select to play the music on your [Spotifyd][spotifyd] daemon instead of on your phone.
+You simply select to play the music on your [Spotifyd][spotifyd] daemon instead of on your phone.
 You can even adjust the volume from your mobile phone, and there is no interference with other audio from your phone (calls, ringtones, alarms). You can change the music from the Spotify app on any other device connected to your internet.
 
 That evening, a friend comes to visit. She is enthusiastic about a new album release that she wants you to hear. 
