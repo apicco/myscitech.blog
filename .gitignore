@@ -7,3 +7,4 @@ _sass
 vendor
 .vscode
 .*.icloud
+.*
