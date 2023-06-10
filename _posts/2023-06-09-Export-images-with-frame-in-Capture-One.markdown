@@ -43,7 +43,7 @@ You will need this path to call mogrify in the [Automator][automator], otherwise
 
 You will need the command:
 ```
-/opt/homebrew/bin/mogrify -bordercolor white -border 5x% $1
+/opt/homebrew/bin/mogrify -bordercolor white -border 4x% $1
 ```
 If you try this script in your shell, replace `$1` with your filename. In Windows, you shall use `%1`.
 
@@ -64,7 +64,7 @@ Your app should look like this:
 
 ![The Automator App](/assets/images/automator-app.png)
 
-Save the app by editing its name (`Untiteled`) in the image and choose its destination folder.
+Save the app by editing its name (`Untitled`) in the image and choose its destination folder.
 You can now test the app by dragging and dropping an image in it.
 
 # Capture One Export Recipes
@@ -89,6 +89,7 @@ The output image should look like that:
 
 <img src="/assets/images/grandmas-fight.jpg" alt="Grandmas' fight. Sardinia, Italy" style="border: 2px solid  gray;">
 
+*Grandmas' fight. Sardinia, Italy*
 
 [my-insta]: https://www.instagram.com/myfisheye.pictures/
 [capture-one]: https://www.captureone.com/en
