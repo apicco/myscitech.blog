@@ -9,18 +9,18 @@ excerpt: "A handy trick if you want to avoid Instagram cropping your images to a
 
 Adding a white or black frame to a picture valorises the picture's composition and appearance. 
 
-A white frame can also be a convenient trick to post photos in a 2:3 ratio on Instagram without it cropping them to fulfil its square format, like [in this example][my-insta]. More on that [later](#how-to-avoid-the-instagram-crop).
+A white frame can also be a convenient trick to post photos in a 2:3 ratio on Instagram without it cropping your photos to fulfil its square format, like [in this example][my-insta]. More on that [later](#how-to-avoid-the-instagram-crop).
 
 # Software presequisites
 
-You need [Capture One][capture-one]. 
-You need to install the [ImageMagick][imagemagick] software suite.
+- You need [Capture One][capture-one]. 
+- You need to install the [ImageMagick][imagemagick] software suite.
 I recommend to install the latter using [Homebrew][homebrew], with this simple command:
 ```
 brew install imagemagick
 ```
 More on this [here][homebrew-imagemagick].
-If you are on a Mac, you can use the powerful [Automator][automator]. If you are on Windows or Linux, you will need to search for a way to render the script that we will write [later](#imagemagic-script) executable. Herewith, I will refer to Mac instructions only, but it should be straightforward to adapt to the other OS systems.
+- If you are on a Mac, you will use the powerful [Automator][automator]. If you are on Windows or Linux, you will need to search for a way to render the script that we will write [later](#imagemagic-script) executable. Herewith, I will refer to Mac instructions only, but it should be straightforward to adapt to the other OS systems.
 
 # ImageMagick script
 
@@ -28,16 +28,16 @@ If you are on a Mac, you can use the powerful [Automator][automator]. If you are
 
 Should you want to keep the original file, use [convert][convert] instead. The commands and the logic of the automation are substantially the same. 
 
-[mogrify][mog] can do much more than add a frame. Unleash your creativity!
+[mogrify][mog] can do much more than adding a frame. Unleash your creativity!
 
 We will use [mogrify][mog] to create a continuous white frame that is 4% of the image's x-side and a white frame to fill the y-axis of landscape images to make them appear square to Instagram. 
 
-First, you need to know where is installed [mogrify][mog] with the command 
+First, you need to know where [mogrify][mog] is installed. Use the command 
 ```
 which mogrify
 ```
-This command should output something like `/opt/homebrew/bin/mogrify` if you installed mogrify with [Homebrew][homebrew]. If you installed the [ImageMagick][imagemagick] otherwise, still find the path to its installation.
-You will need this path to call mogrify in the [Automator][automator], otherwise, it might not find it. 
+This command should output something like `/opt/homebrew/bin/mogrify` (if you installed mogrify with [Homebrew][homebrew]). If you installed the [ImageMagick][imagemagick] otherwise, still find the path to its installation.
+You will need this path to call mogrify in the [Automator][automator], otherwise, Automator might not find it. 
 
 ## Continous frame 4% wide
 
@@ -51,7 +51,7 @@ If you try this script in your shell, replace `$1` with your filename. In Window
 ```
 /opt/homebrew/bin/mogrify -bordercolor white -border x180 $1
 ```
-The border size rationale will be evident in the set-up of the Export Recipes in [Capture One][caputer-one].
+The border size rationale will be evident in the set-up of the Export Recipes in [Capture One][capture-one].
 
 # Automator app
 
@@ -59,12 +59,12 @@ In [Automator][automator], select `File>New` and then choose _Application_.
 In the `Library`, under `Files...olders`, choose (double click or drag) `Get Selected Finder Items`.
 Then, again in the `Library`, under `Utilities`, choose `Run Shell Script`.
 Replace `cat` with one of the [mogrify][mog] scripts above. 
-In _Pass input_ in the top right of the `Run Shell Script` window, choose _as arguments_.
+In **Pass input** in the top right of the `Run Shell Script` window, choose **as arguments**.
 Your app should look like this:
 
 ![The Automator App](/assets/images/automator-app.png)
 
-Save the app by editing its name (`Untitled`) in the image and choose its destination folder.
+Save the app by editing its name (`Untitled` in the above image) and choose its destination folder.
 You can now test the app by dragging and dropping an image in it.
 
 # Capture One Export Recipes
@@ -77,7 +77,7 @@ Choose your app in the tab `Open with` under `Format & Size`.
 We can now create an Export Recipe that transforms your landscape format pictures into square pictures.
 
 In Capture One, create an Export Recipe that:
-- Uses as ICC Profile `sRGB Color Space Profile`.
+- Uses as ICC Profile `sRGB Color Space Profile`. That is the color profile used by most browsers (you aren't printing these pictures).
 - Has its width set to 1080px. A 2:3 ratio landscape picture will have a 720px height. You need 360px of the white border to make it a 1080px-1080px image. That is why in the [mogrify][mog] recipe [above](# fill-instagram-square-format), you create 180px heigh horizontal borders.
 - Open the output file with your [Automator app](#automator-app).
 
