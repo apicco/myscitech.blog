@@ -149,3 +149,33 @@ Support verctor machine
 best line that separate data is the one with the biggest distance
 hypeplanes tha thave the highest marging
 
+
+- 26/06/23 recap
+
+cross validation with pipeline
+knn logistic or svm
+you can use the algorithm as an hyperparameter
+train n different algorithms and then compare their cross validated metric to see hwch performs teh better, or put them all together( ?)
+
+
+cancer correction exercise
+
+classifier super powerful, define the methods to use and theirparameters, see the execrise correction for the "cancer correction"
+
+scoring done with roc_auc
+roc curve compares cost of error acceptance
+
+
+#chapter 4
+random forest
+
+generate trees that detail teh classification steps
+
+three does not need to scale because features are accounted independently.
+the tree can be shown to detail the classification steps.
+
+in the hierachical clustering we are based on the distance, and unsupervised learnig
+in decision tree we are doing classification we have a feature that we want to fit, thus supervised learning, the approach is very mecchanical and applies to each feature independely.
+
+random forest: forest is a collection of trees.
+
