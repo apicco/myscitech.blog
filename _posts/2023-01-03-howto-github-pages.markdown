@@ -34,7 +34,7 @@ jekyll new --skip-bundle .
 This command generates a number of files, including a Gemfile, which is a list of gems used by your site.
 To use Jekyll with GitHub Pages, you need to edit the Gemfile and
 
-- comment `gem "jekyll"`
+- comment the line starting with `gem "jekyll"`
 - uncomment `gem "github-pages", group: :jekyll_plugins`
 
 Then, in your repository folder type
