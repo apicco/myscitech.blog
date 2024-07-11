@@ -20,7 +20,7 @@ Now you are ready to clone your repository:
 git clone https://github.com/<your-user-name>/<your-repository-name>.git
 ```
 
-Enter your repository folder, which should be except for the LICENCE and README.md files if you choose to have them (you can empty the directory with `git rm -rf` if you need).
+Enter your repository folder, which should be empty except for the LICENCE and README.md files if you choose to have them (you can empty the directory with `git rm -rf` if you need).
 
 # Deploy Jekyll
 
