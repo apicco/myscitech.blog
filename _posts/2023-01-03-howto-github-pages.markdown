@@ -86,7 +86,7 @@ git push
 
 # Publish your github page 
 
-In Settings, under **Code and automation**, in `Pages`, and then **Build and deployment**, choose:
+In Settings, under **Code and automation** in the right hand menu, chose `Pages`, and then **Build and deployment**, choose:
 - Source: `Deploy from a branch`
 - Branch: select `main`, leave `/(root)`, and click Save
 
