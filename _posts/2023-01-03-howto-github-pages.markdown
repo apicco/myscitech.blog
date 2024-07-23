@@ -162,7 +162,7 @@ The code should look like this:
 Note that here I replaced `<your-measurement-ID>` with {%raw%}`{{ site.google_analytics }}`{%endraw%} in two places. 
 This code will thus load `<your-measurement-ID>` from your `_config.yml` file.
 
-Paste the code in a new `google_analytics.html` file in your `\_includes` (which thus overwrites the default from [minima][minima]). 
+Paste the code in a new `google-analytics.html` file in your `\_includes` (which thus overwrites the default from [minima][minima]). 
 You must name your file as `google-analytics.html` because the default `head.html` in the [minima][minima] searches for such a file:
 {%raw%}
 ```
